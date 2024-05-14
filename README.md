@@ -2,13 +2,17 @@
 ( ![298313196-019162ce-a988-4be8-9fbd-3c6dc37f9640](https://github.com/Zigul1/CanaryShell/assets/157254375/98e4d648-c4c9-440f-84d4-3c6513dcd349)
  la versione in italiano è "*CanaryShell-ita.ps1*"; come guida c'è [questo articolo](https://turbolab.it/privacy-190/canaryshell-monitora-blocca-azioni-indesiderate-cartelle-4075) )
 
-This PowerShell script allows you to create another customizable script that is able to monitor a "canary file" (that can be any file) and its folder. The **general purpose** is to stop malwares (like ransomwares) or attackers from deleting or copying the content of that folder, or at least the script should alert the user while it's happening. The monitoring **resources consumption** is almost null, the script just check few small data periodically.
+This PowerShell script for **Windows 10** allows you to create another customizable script that is able to monitor a "canary file" (that can be any file) and its folder. The **general purpose** is to stop malwares (like ransomwares) or attackers from deleting or copying the content of that folder, or at least the script should alert the user while it's happening. The monitoring **resources consumption** is almost null, the script just check few small data periodically.
 
 ### USAGE
 The procedure is simple:
 1. create a file that will act as a disguised sentinel for its folder (name it with an appealing name and don't leave it empty)
 2. run *CanaryShell.ps1* and follow its instructions to set: the action you want as an alarm, how often the "canary file" have to be checked, etc. at the end of the quick process, a PowerShell script (named as you want) will be generated
 3. set the created PowerShell script as a task that runs at Windows startup, or when a certain user logs in, or at set time intervals, or in a folder to be launched manually.
+
+**Example**:
+![example](https://github.com/Zigul1/CanaryShell/assets/157254375/6ca4fc5e-5afd-4fb4-8c6e-ce7343d55143)
+In this case we run CanaryShell from its folder, "file.txt" will be the "canary file", the custom alarm action will be launching Notepad, the checking interval will be 8 seconds and the monitoring script will be "controller.ps1" in the Documents folder.
 
 ### MONITORED CHANGES
 The monitoring scripts looks for:
